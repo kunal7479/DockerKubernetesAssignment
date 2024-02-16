@@ -1,0 +1,14 @@
+# Use a base image with JDK 8 installed
+FROM openjdk:11-jdk-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the packaged JAR file into the container
+COPY target/your-application.jar /app/your-application.jar
+
+# Expose the port that your Spring Boot application uses
+EXPOSE 8081
+
+# Specify the command to run your Spring Boot application when the container starts
+CMD ["java", "-jar", "DockerAssignment-0.0.1-SNAPSHOT.jar.jar"]
